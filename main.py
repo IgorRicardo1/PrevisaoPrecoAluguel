@@ -94,6 +94,9 @@ for index, row in dados_usuario.iterrows():
 # Cria um DataFrame a partir dos resultados
 df_resultados = pd.DataFrame(resultados)
 
+# Formata a coluna de preço para duas casas decimais
+df_resultados['preco'] = df_resultados['preco'].apply(lambda x: f"{x:.2f}")
+
 # Salva o DataFrame em um arquivo CSV
 df_resultados.to_csv('precos_estimados.csv', index=False)
 
